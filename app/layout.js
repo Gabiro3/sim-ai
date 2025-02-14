@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { dark } from "@clerk/themes";
 import Image from 'next/image';
+import Logo from '../public/rw.jpg';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,7 @@ const MadeInRwanda = () => {
 
       {/* Rwandan Flag */}
       <Image
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Rwanda.svg/2560px-Flag_of_Rwanda.svg.png"
+        src={Logo}
         alt="Rwandan Flag"
         width={100}  // Adjust the width as needed
         height={60}  // Adjust the height as needed
