@@ -18,20 +18,20 @@ export const metadata = {
 
 const MadeInRwanda = () => {
   return (
-    <div className="container mx-auto px-4 text-center text-gray-200">
-      <p>Made in Rwanda</p>
-
+    <div className="container mx-auto px-4 text-center text-gray-200 flex items-center justify-center">
+      <p className="mr-2">Made in Rwanda</p> {/* Adds some space between the text and flag */}
+      
       {/* Rwandan Flag */}
       <Image
         src={Logo}
         alt="Rwandan Flag"
-        width={100}  // Adjust the width as needed
-        height={60}  // Adjust the height as needed
-        className="mx-auto mt-4"
+        width={50}  // Adjust the width as needed
+        height={30}  // Adjust the height as needed
       />
     </div>
   );
 };
+
 
 
 export default function RootLayout({ children }) {
