@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
-import { FaCopy } from "lucide-react"; // Import the copy icon from react-icons
+import { Copy } from "lucide-react";  // Correct import for the copy icon
 import { toast } from "sonner";
 
 const CoverLetterPreview = ({ content }) => {
@@ -26,7 +26,7 @@ const CoverLetterPreview = ({ content }) => {
         title="Copy Content"
         className="absolute top-4 right-4 bg-gray-100 p-2 rounded-md shadow hover:bg-gray-200"
       >
-        <FaCopy className="text-xl text-blue-500" />
+        <Copy className="text-xl text-blue-500" />
       </button>
 
       {/* Markdown Editor Preview */}
