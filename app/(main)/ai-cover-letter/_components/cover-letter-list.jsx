@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { format } from "date-fns";
-import { Edit2, Eye, Trash2 } from "lucide-react";
+import { Copy, Eye, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import {
   Card,
@@ -36,6 +36,15 @@ export default function CoverLetterList({ coverLetters }) {
     } catch (error) {
       toast.error(error.message || "Failed to delete cover letter");
     }
+  };
+  const handleCopy = (content) => {
+    navigator.clipboard.writeText(content).then(() => {
+      // Show success toast after content is copied
+      toast.success("Content copied successfully!");
+    }).catch(() => {
+      // Handle error if copy fails
+      toast.error("Failed to copy content!");
+    });
   };
 
   if (!coverLetters?.length) {
@@ -73,6 +82,13 @@ export default function CoverLetterList({ coverLetters }) {
                     onClick={() => router.push(`/ai-cover-letter/${letter.id}`)}
                   >
                     <Eye className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => handleCopy(letter.content)}
+                  >
+                    <Copy className="h-4 w-4" />
                   </Button>
                   <AlertDialogTrigger asChild>
                     <Button variant="outline" size="icon">
